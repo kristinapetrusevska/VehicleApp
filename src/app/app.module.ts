@@ -14,6 +14,10 @@ import { DataService } from './data.service';
 import { CreateVehiclesComponent } from './vehicles/create-vehicles/create-vehicles.component';
 import { EditVehiclesComponent } from './vehicles/edit-vehicles/edit-vehicles.component';
 import { SearchVehiclesComponent } from './vehicles/search-vehicles/search-vehicles.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
+import { UserService } from './users/user.service';
+import { HomeComponent } from './home/home.component';
+import { UserSingletonService } from './user-singleton.service';
 
 
 @NgModule({
@@ -23,7 +27,9 @@ import { SearchVehiclesComponent } from './vehicles/search-vehicles/search-vehic
     DetailsVehiclesComponent,
     CreateVehiclesComponent,
     EditVehiclesComponent,
-    SearchVehiclesComponent
+    SearchVehiclesComponent,
+    UserLoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { SearchVehiclesComponent } from './vehicles/search-vehicles/search-vehic
     HttpClientModule,
     FormsModule
   ],
-  providers: [VehicleService,HttpClient,DataService],
+  providers: [VehicleService, HttpClient, DataService, UserService,UserSingletonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
