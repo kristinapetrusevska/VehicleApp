@@ -16,28 +16,30 @@ export class ListVehiclesComponent implements OnInit {
   constructor(private _vehicleService: VehicleService, private _dataService: DataService) {
 
   }
-
+  
   ngOnInit(): void {
-    this.getAllVeh();
-    
+
+    this._dataService.currentRefreshList.subscribe(
+      (d) => {
+      this.del = d,
+        this.getVehicles()
+      }
+    );
+
+    this.getVehicles();
+
   }
 
   details(id: string) {
-
     this._vehicleService.getVehicle(id).subscribe(
       (veh: Vehicle) => { this.vehicle = veh },
       (error: any) => { console.log('error: ' + error) },
       () => {
-        this._dataService.changeVehicle(this.vehicle);
-        this._dataService.changeDelete(false)
-
+        this._dataService.changeVehicle(this.vehicle);        
+        this._dataService.changeRefreshList(false);
       });
   }
-  getAllVeh() {
-    this._vehicleService.getVehicles().subscribe((vehicleList) => { this.vehicles = vehicleList },
-      (error) => { console.log('error!') },
-      () => { console.log('Completed...'), this._dataService.changeDelete(false),
-      this._dataService.changeVehicle(this.vehicles[0]); }
-    );
+  getVehicles() {
+    this._vehicleService.getVehicles().subscribe((vehicleList) => { this.vehicles = vehicleList });
   }
 }

@@ -7,7 +7,7 @@
     <th>Registration number</th>
     <th>Number od tours</th>
   </tr>
-  <tr *ngFor="let vehicle of vehicles" (click)="details(vehicle.id)">
+  <tr *ngFor="let vehicle of vehicles" (click)="details(vehicle.id)" >
     <td>{{vehicle.id}}</td>
     <td>{{vehicle.unitName}}</td>
     <td>{{vehicle.carInfo}}</td>

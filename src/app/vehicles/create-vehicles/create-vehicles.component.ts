@@ -40,6 +40,9 @@ export class CreateVehiclesComponent implements OnInit {
       () => {
         this.vehicleForm.reset();
         this.popup = !this.popup;
+        this._dataService.changeCreate(false);
+        this._dataService.changeRefreshList(true);
+
 
       }
     );

@@ -1,4 +1,4 @@
-<div *ngIf="vehicle">  
+<div *ngIf="vehicle" >  
  <h4>{{vehicle.unitName}} </h4>   
   Id:  {{vehicle.id}}<br/>
   Car info:  {{vehicle.carInfo}}<br/>
@@ -6,6 +6,6 @@
    Registration No.: {{vehicle.registrationNumber}}<br/>
    Number of tours:  {{vehicle.numberOfTours}}<br/>
 
-   <button (click)=delete(vehicle.id)>Delete</button>
+   <button (click)="delete(vehicle.id)">Delete</button>
    <button (click)=edit()>Edit</button>
 </div>

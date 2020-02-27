@@ -29,6 +29,7 @@ export class EditVehiclesComponent implements OnInit {
     () => { },
     (error: any) => { console.log('error:' + error) },
     () => {  this.popup = !this.popup;this._dataService.changeEdit(false);
+      this._dataService.changeRefreshList(true);
     }   
   );
  }
