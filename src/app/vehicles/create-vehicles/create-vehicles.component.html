@@ -1,27 +1,41 @@
-<form #vehicleForm="ngForm" (ngSubmit)="createVehicle()" *ngIf="popup">
-    
-    <label for="unitName">Unit Name</label>
-    <input id="unitName" type="text" class="form-control" name="unitName" #unitName [(ngModel)]="vehicle.unitName"><br/>
+<ng-container *ngIf="popup">
+<div [ngClass]="_dataService.currentCreate.getValue() == true ? 'grey-bg' : ''">
+<form #vehicleForm="ngForm" (ngSubmit)="createVehicle()" *ngIf="popup" class="popup">
+    <div class="createDiv">
+        <br />
+        <br />
 
-    <label for="carInfo"> Car info</label>
-    <input id="carInfo" type="text" class="form-control" name="carInfo" #carInfo [(ngModel)]="vehicle.carInfo"><br/>
-
-    <label for="active">Active</label>
-    <input id="active" type="text" class="form-control" name="active" #active [(ngModel)]="vehicle.active"><br/>
-
-    <label for="registrationNumber">Registration No.</label>
-    <input id="registrationNumber" type="text" class="form-control" name="registrationNumber" #registrationNumber [(ngModel)]="vehicle.registrationNumber"><br/>
-
-    <label for="numberOfTours">numberOfTours</label>
-    <input id="numberOfTours" type="text" class="form-control" name="numberOfTours" #numberOfTours [(ngModel)]="vehicle.numberOfTours"><br/>
+        <input id="unitName" type="text" class="form-control input" placeholder="unit name" name="unitName" #unitName
+            [(ngModel)]="vehicle.unitName"><br />
 
 
-    <div>
-        <button type="submit">Save</button>
+        <input id="carInfo" type="text" class="form-control input" name="carInfo" placeholder="car info" #carInfo
+            [(ngModel)]="vehicle.carInfo"><br />
 
-        <button (click)="cancel()"> Cancel</button>
+
+        <input id="active" type="text" class="form-control input" name="active" placeholder="active" #active
+            [(ngModel)]="vehicle.active"><br />
+
+
+        <input id="registrationNumber" type="text" class="form-control input" placeholder="registration number"
+            name="registrationNumber" #registrationNumber [(ngModel)]="vehicle.registrationNumber"><br />
+
+
+        <input id="numberOfTours" type="text" class="form-control input" placeholder="number of tours"
+            name="numberOfTours" #numberOfTours [(ngModel)]="vehicle.numberOfTours"><br />
+
+
+
+        <button id="saveButton" type="submit">SAVE</button><br />
+
+        <button id="cancelButton" (click)="cancel()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <br />
+
+
+
     </div>
-
-
 </form>
-
+</div>
+</ng-container>

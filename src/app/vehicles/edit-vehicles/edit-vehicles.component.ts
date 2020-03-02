@@ -13,7 +13,7 @@ export class EditVehiclesComponent implements OnInit {
   @ViewChild('vehicleForm') public vehicleForm: NgForm;
   vehicle: Vehicle;
  
-  constructor(private _vehicleService: VehicleService, private _dataService: DataService) { }
+  constructor(private _vehicleService: VehicleService, public _dataService: DataService) { }
   popup: boolean;
   ngOnInit(): void {
     this._dataService.currentVehicle.subscribe(d=> this.vehicle=d);

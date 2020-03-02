@@ -11,9 +11,15 @@ import { UserToken } from '../models/usertoken.model';
 export class HomeComponent implements OnInit {
 
   userr:UserToken = this.singleton;
-  constructor(private _dataService: DataService, private _userSingletonService: UserSingletonService) { }
+  constructor(private _dataService: DataService, private _userSingletonService: UserSingletonService) {
+    this.userr = this.singleton;
+    //console.log(this.singleton.user.username);
+   }
 
   ngOnInit(): void {
+    this.userr = this.singleton;
+    //console.log(this.singleton.user.username);
+
   }
   get singleton(){
     return this._userSingletonService.user;

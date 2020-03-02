@@ -18,7 +18,7 @@ export class SearchVehiclesComponent implements OnInit {
   show: boolean = false;
   vehicle: Vehicle;
 
-  constructor(private _vehicleService: VehicleService, private _dataService: DataService) {
+  constructor(private _vehicleService: VehicleService, public _dataService: DataService) {
     this._dataService.currentSearch.subscribe(d => this.numOfRes = d);
     this._vehicleService.getVehicleBySearchString(this.searchText).subscribe((d) => { this.filteredVehicles = d });
   }
@@ -31,6 +31,7 @@ export class SearchVehiclesComponent implements OnInit {
       (d)=> {this.vehicle=d},
       (error)=>{},
       ()=>{this._dataService.changeVehicle(this.vehicle)});
+      this.show=!this.show;
     
   }
   searchVehicle() {

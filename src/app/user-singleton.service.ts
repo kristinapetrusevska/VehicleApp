@@ -6,4 +6,7 @@ import { UserService } from './users/user.service';
 export class UserSingletonService {
     
     user: UserToken;
+    constructor(){
+        console.log('Hello')
+    }
 }

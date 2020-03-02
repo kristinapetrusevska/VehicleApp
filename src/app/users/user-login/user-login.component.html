@@ -1,17 +1,17 @@
-<form #loginForm="ngForm" (ngSubmit)="login()" >
-    
-    <label for="username">Username: </label>
-    <input id="username" type="text" class="form-control" name="username" [(ngModel)]="username"><br/>
-
-    <label for="password">Password: </label>
-    <input id="password" type="text" class="form-control" name="password" [(ngModel)]="password"><br/>
-
-    
-
-    <div>
-        <button type="submit" >Login</button>
-    </div>
-    <label *ngIf="fail">{{fail}}</label>
+<div id="formDiv">
+    <form #loginForm="ngForm" (ngSubmit)="login()" id="loginForm">
 
 
-</form>
+        <input id="username" type="text" class="form-control" name="username" [(ngModel)]="username"
+            placeholder="username" required><br />
+           
+        <input id="password" type="text" class="form-control" name="password" [(ngModel)]="password"
+            placeholder="password" required><br />
+        <!-- <div><label *ngIf="fail">{{fail}}</label></div> -->
+        <small *ngIf="fail" class="form-text text-muted">{{fail}}</small>
+        <div>
+            <button id="loginButton" type="submit">LOGIN</button>
+        </div>
+        
+    </form>
+</div>

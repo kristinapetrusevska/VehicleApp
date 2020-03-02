@@ -1,11 +1,37 @@
-<div *ngIf="vehicle" >  
- <h4>{{vehicle.unitName}} </h4>   
-  Id:  {{vehicle.id}}<br/>
-  Car info:  {{vehicle.carInfo}}<br/>
-  Active:  {{vehicle.active}}<br/>
-   Registration No.: {{vehicle.registrationNumber}}<br/>
-   Number of tours:  {{vehicle.numberOfTours}}<br/>
+<div *ngIf="vehicle">
+   <div id="detailsDiv">
+     <div class="row"> <h4>{{vehicle.unitName}} </h4></div>
+      <div class="row">
+         <div class="column">
+            Id: <br />
+            Car info: <br />
+            Active: <br />
+            Registration No.: <br />
+            Number of tours: <br />
+         </div>
+         <div>
+            <div class="column" style="margin-left: 2px;">
+               {{vehicle.id}}<br />
+               {{vehicle.carInfo}}<br />
+               {{vehicle.active}}<br />
+               {{vehicle.registrationNumber}}<br />
+               {{vehicle.numberOfTours}}<br />
+            </div>
+         </div>
 
-   <button (click)="delete(vehicle.id)">Delete</button>
-   <button (click)=edit()>Edit</button>
+      </div>
+   
+      <button (click)="delete(vehicle.id)">Delete</button> 
+      <button (click)=edit()>Edit</button>
+      <br/>
+      <br/>
+
+   </div>
 </div>
+
+<!-- <h4>{{vehicle.unitName}} </h4>
+   Id: {{vehicle.id}}<br />
+   Car info: {{vehicle.carInfo}}<br />
+   Active: {{vehicle.active}}<br />
+   Registration No.: {{vehicle.registrationNumber}}<br />
+   Number of tours: {{vehicle.numberOfTours}}<br /> -->

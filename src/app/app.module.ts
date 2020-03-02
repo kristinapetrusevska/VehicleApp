@@ -18,6 +18,7 @@ import { UserLoginComponent } from './users/user-login/user-login.component';
 import { UserService } from './users/user.service';
 import { HomeComponent } from './home/home.component';
 import { UserSingletonService } from './user-singleton.service';
+import { TextComponent } from './text/text.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UserSingletonService } from './user-singleton.service';
     EditVehiclesComponent,
     SearchVehiclesComponent,
     UserLoginComponent,
-    HomeComponent
+    HomeComponent,
+    TextComponent
   ],
   imports: [
     BrowserModule,

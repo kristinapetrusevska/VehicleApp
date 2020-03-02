@@ -1,8 +1,33 @@
-<h3>Hello {{userr.user.username}} !</h3>
-<app-list-vehicles ></app-list-vehicles><br/>
-<button (click)="create()">Create</button>
-<app-details-vehicles ></app-details-vehicles>
-<br/>
-<app-create-vehicles></app-create-vehicles><br/>
-<app-edit-vehicles></app-edit-vehicles><br/>
-<app-search-vehicles></app-search-vehicles>
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Log out</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/text">Text</a>
+            </li>
+        </ul>
+    </nav>
+    <br />
+    <h3>Hello {{userr.user.username}} !</h3><br />
+
+    <div class="row">
+        <div class="column">
+            <app-list-vehicles></app-list-vehicles><br />
+        </div>
+        <div id="searchAndDetails" class="column">
+            <app-search-vehicles></app-search-vehicles>
+            <app-details-vehicles></app-details-vehicles>
+            
+        </div>
+    </div>
+    
+    <br />
+    <app-create-vehicles></app-create-vehicles><br />
+    <app-edit-vehicles></app-edit-vehicles><br />
+       <button (click)="create()">Create</button>
+</div>

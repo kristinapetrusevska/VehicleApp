@@ -20,7 +20,7 @@ export class CreateVehiclesComponent implements OnInit {
     registrationNumber: null,
     numberOfTours: null
   };
-  constructor(private _dataService: DataService, private _vehicleService: VehicleService) { }
+  constructor(public _dataService: DataService, private _vehicleService: VehicleService) { }
 
   popup: boolean;
 

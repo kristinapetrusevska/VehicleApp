@@ -1,0 +1,34 @@
+#loginForm{
+
+    
+    text-align:left;
+    padding:50px;
+}
+
+#formDiv{
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#loginButton{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+   width: 100%;
+  border: 0;
+  padding: 15px;
+  background-color:#343a40;
+  color:white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}

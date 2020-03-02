@@ -1,0 +1,48 @@
+.popup{
+    width: 700px;
+    height: 300px;
+    position: fixed ;
+    left: calc(50% - 350px);
+    top: 24%;    
+  }
+  .editDiv{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: white;
+    width: 100;
+    height: 100;
+}
+.input{
+  width:500px;
+  margin-left: 100px;
+}
+  #saveButton{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+   width: 50%;
+   height: 20%;
+  border: 0;
+  padding: 15px;
+  margin-left: 170px;
+  background-color:#343a40;
+  color:white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+#cancelButton{
+    position:absolute;
+ top:0;
+ right:10px;
+
+}
+.grey-bg {
+  position:absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    width: 100%;
+    height: 100%;    
+   background-color:  rgba(99, 81, 81, 0.2);
+}
