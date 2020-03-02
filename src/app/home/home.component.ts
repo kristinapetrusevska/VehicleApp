@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { UserSingletonService } from '../user-singleton.service';
 import { UserToken } from '../models/usertoken.model';
+import { Vehicle } from '../models/vehicle.model';
+
+
 
 @Component({
   selector: 'app-home',
@@ -10,21 +13,27 @@ import { UserToken } from '../models/usertoken.model';
 })
 export class HomeComponent implements OnInit {
 
-  userr:UserToken = this.singleton;
+  vehicle: Vehicle;
+  position: boolean=false;
+  userr: UserToken = this.singleton;
   constructor(private _dataService: DataService, private _userSingletonService: UserSingletonService) {
     this.userr = this.singleton;
-    //console.log(this.singleton.user.username);
-   }
+    
+  }
 
   ngOnInit(): void {
     this.userr = this.singleton;
-    //console.log(this.singleton.user.username);
+    this._dataService.currentVehicle.subscribe(d=>{this.vehicle=d, this.setPosition(), console.log('working..')});
+    
 
   }
-  get singleton(){
+  setPosition(){
+    if(this.vehicle!=null){ this.position=true;}
+  }
+  get singleton() {
     return this._userSingletonService.user;
   }
-  create(){
+  create() {
     this._dataService.changeCreate(true);
   }
 }

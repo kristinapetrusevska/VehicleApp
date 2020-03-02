@@ -19,6 +19,9 @@ import { UserService } from './users/user.service';
 import { HomeComponent } from './home/home.component';
 import { UserSingletonService } from './user-singleton.service';
 import { TextComponent } from './text/text.component';
+import { ReportsVehiclesComponent } from './vehicles/reports-vehicles/reports-vehicles.component';
+import { ReportService } from './vehicles/report.service';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -31,15 +34,19 @@ import { TextComponent } from './text/text.component';
     SearchVehiclesComponent,
     UserLoginComponent,
     HomeComponent,
-    TextComponent
+    TextComponent,
+    ReportsVehiclesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAQVsdCBHs5tajaROyhHkejQ0hcvyx1gbo'
+    })
   ],
-  providers: [VehicleService, HttpClient, DataService, UserService,UserSingletonService],
+  providers: [VehicleService, HttpClient, DataService, UserService,UserSingletonService,ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

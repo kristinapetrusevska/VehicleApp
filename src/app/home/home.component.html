@@ -22,12 +22,40 @@
         <div id="searchAndDetails" class="column">
             <app-search-vehicles></app-search-vehicles>
             <app-details-vehicles></app-details-vehicles>
-            
+
         </div>
     </div>
-    
+
     <br />
     <app-create-vehicles></app-create-vehicles><br />
     <app-edit-vehicles></app-edit-vehicles><br />
-       <button (click)="create()">Create</button>
+    <button (click)="create()">Create</button>
+
+
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <div data-toggle="tab" href="#home">Find on map |</div>
+        </li>
+        <li>
+            <div data-toggle="tab" href="#menu1"> Reports</div>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>Find on map</h3> <br />
+            <div *ngIf="position">Latitude: {{vehicle.lat}}
+                <br />Longitude: {{vehicle.lng}}
+            </div>
+            <agm-map *ngIf="position" [latitude]="vehicle.lat" [longitude]="vehicle.lng"></agm-map>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>Reports</h3>
+            <app-reports-vehicles></app-reports-vehicles>
+        </div>
+    </div>
+    <br />
+
+
+
 </div>

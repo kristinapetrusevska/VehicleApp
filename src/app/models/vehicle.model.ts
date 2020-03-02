@@ -1,3 +1,5 @@
+import { DecimalPipe } from '@angular/common';
+
 export class Vehicle {
     id: string;
     unitName: string;
@@ -5,4 +7,6 @@ export class Vehicle {
     active: boolean;
     registrationNumber: number;
     numberOfTours: number;
+    lat: number;
+    lng: number;
 }

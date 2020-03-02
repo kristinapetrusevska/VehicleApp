@@ -18,7 +18,9 @@ export class CreateVehiclesComponent implements OnInit {
     carInfo: null,
     active: null,
     registrationNumber: null,
-    numberOfTours: null
+    numberOfTours: null,
+    lat: null,
+    lng: null
   };
   constructor(public _dataService: DataService, private _vehicleService: VehicleService) { }
 

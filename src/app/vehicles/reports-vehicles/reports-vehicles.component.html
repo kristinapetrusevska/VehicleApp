@@ -1,0 +1,46 @@
+<button (click)="createReport()">Create report</button><br/>
+<div class="row">
+
+    <div class="column">
+        <table>
+            <tr>
+                <th>Report Id</th>
+                <th>Report Text</th>
+
+            </tr>
+            <tr *ngFor="let report of reports">
+                <td>{{report.id}}</td>
+                <td>{{report.reportText}}</td>
+                <td> <button  (click)="deleteReport(report.id)" type="button" class="close"
+                        aria-label="Delete">
+                        <span aria-hidden="true">&times;</span>
+                    </button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="column">
+        <ng-container *ngIf="show">
+            <div >
+            <form #reportForm="ngForm" (ngSubmit)="saveReport()" class="popup">
+                <div class="createDiv">
+                    <br />
+                    <br />
+            
+                    <input id="reportText" type="text" class="form-control input" placeholder="reportText" name="reportText" #reportText
+                        [(ngModel)]="report.reportText"><br />               
+                                                                                      
+                    <button id="saveButton" type="submit">SAVE</button><br />
+            
+                    <button id="cancelButton" (click)="createReport()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <br />          
+            
+            
+                </div>
+            </form>
+            </div>
+            </ng-container>
+    </div>
+</div>
