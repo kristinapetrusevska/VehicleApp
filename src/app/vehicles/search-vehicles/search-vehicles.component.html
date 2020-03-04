@@ -7,15 +7,16 @@
 <br />
 <ng-container *ngIf="show">
   <div [ngClass]="_dataService.currentSearch.getValue() == true ? 'grey-bg' : ''">
-<table *ngIf="show" style="border:1px solid black;" class="popup searchDiv">
+<table *ngIf="show"  class="popup searchDiv table">
   <tr>
     <th>Id</th>
     <th>Unit Name</th>
     <th>Car Info</th>
     <th>Active</th>
-    <th>Registration number</th>
-    <th>Number od tours</th>
+    <th>Reg No.</th>
+    <th>No. of tours</th>
   </tr>
+  <tbody style="cursor: pointer;" class="hoverBody">
   <tr *ngFor="let vehicle of filteredVehicles" (click)="details(vehicle.id)">
     <!--(click)="details(vehicle.id)-->
     <td>{{vehicle.id}}</td>
@@ -24,6 +25,7 @@
     <td>{{vehicle.active}}</td>
     <td>{{vehicle.registrationNumber}}</td>
     <td>{{vehicle.numberOfTours}}</td>
-  </tr>
+    </tr>
+  </tbody>
 </table>
 </div></ng-container>

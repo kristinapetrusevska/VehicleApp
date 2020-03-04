@@ -1,5 +1,6 @@
 <div *ngIf="vehicle">
    <div id="detailsDiv">
+      <br/>
      <div class="row"> <h4>{{vehicle.unitName}} </h4></div>
       <div class="row">
          <div class="column">
@@ -21,8 +22,8 @@
 
       </div>
       <br/>
-      <div id="buttons"><button (click)="delete(vehicle.id)">Delete</button> 
-      <button class="edit" (click)=edit()>Edit</button></div>
+      <div id="buttons"><button class="btn btn-primary" (click)="delete(vehicle.id)">Delete</button> 
+      <button class="edit btn btn-primary" (click)=edit()>Edit</button></div>
       <br/>
       <br/>
 

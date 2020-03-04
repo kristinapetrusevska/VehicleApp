@@ -48,3 +48,11 @@
       height: 100%;    
      background-color:  rgba(99, 81, 81, 0.2);
   }
+  .btn-primary{
+    background-color: rgb(77, 77, 77);
+    border-color:  rgb(77, 77, 77);
+  }
+  .btn-primary:hover{
+    background-color: rgb(49, 49, 49);
+    border-color:  rgb(49, 49, 49);
+  }

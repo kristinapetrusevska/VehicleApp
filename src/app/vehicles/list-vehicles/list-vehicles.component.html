@@ -6,13 +6,13 @@
         <th scope="col">Unit Name</th>
         <th scope="col">Car Info</th>
         <th scope="col">Active</th>
-        <th scope="col">Registration No.</th>
+        <th scope="col">Reg No.</th>
         <th scope="col">No. of tours</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="hoverBody">
 
-      <tr *ngFor="let vehicle of vehicles" (click)="details(vehicle.id)">
+      <tr style="cursor: pointer;"  *ngFor="let vehicle of vehicles" (click)="details(vehicle.id)">
         <td>{{vehicle.id}}</td>
         <td>{{vehicle.unitName}}</td>
         <td>{{vehicle.carInfo}}</td>
@@ -25,10 +25,3 @@
   </table>
 </div>
 
-<!-- <script>
-  var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
-  var ps = new PerfectScrollbar(myCustomScrollbar);
-  var scrollbarY = myCustomScrollbar.querySelector('.ps__rail-y');
-  myCustomScrollbar.onscroll = function () {
-    scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;}
-</script> -->

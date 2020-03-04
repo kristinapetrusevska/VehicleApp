@@ -2,7 +2,7 @@
     position: relative;
     height: 500px;
     overflow: auto;
-    width: 640px;
+    width: 630px;
     }
     .table-wrapper-scroll-y {
     display: block;
@@ -10,10 +10,19 @@
     }
     .table{
         width: 600px;
+        
     }
     .my-custom-scrollbar {
         position: relative;
-        width: 640px;
+        width: 630px;
         height: 400px;
         overflow: auto;
       }
+      .td{
+        cursor: pointer;
+      }
+	
+	/* Define the hover highlight color for the table row */
+    .hoverBody tr:hover {
+          background-color: #e7e7e7;
+    }

@@ -4,8 +4,9 @@
     z-index:90;
     top:0%;
     left:0%;
-    background-color:#b4b7b9;
+    background-color:#ffffff;
     opacity:0.9;
     
 }
 .router-outlet{ font-family: "Roboto", sans-serif;}
+

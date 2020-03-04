@@ -33,8 +33,10 @@
      background-color:  rgba(99, 81, 81, 0.2);
   }
   .searchDiv{
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     background-color: white;
-    width: 100;
+    width: 800px;
     height: 100;
+}
+.hoverBody tr:hover {
+  background-color: #e7e7e7;
 }
