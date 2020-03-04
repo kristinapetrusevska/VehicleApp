@@ -9,21 +9,25 @@ import { Router } from '@angular/router';
 @Injectable()
 export class ReportService {
 
-
+    defaultUrl: string ='https://localhost:44361/';
     constructor(private _httpClient: HttpClient, private _router: Router) {
 
     }
 
     getReports(id: string): Observable<Report[]> {
-        return this._httpClient.get<Report[]>('https://localhost:44361/api/Reports/' + id);
+        return this._httpClient.get<Report[]>(this.defaultUrl + 'api/Reports/' + id);
     }
 
     deleteReport(id: number) {
-        return this._httpClient.delete<void>('https://localhost:44361/api/Reports/' + id);
+        return this._httpClient.delete<void>(this.defaultUrl +'api/Reports/' + id);
     }
     createReport(report: Report, vehId: string): Observable<Report> {
         console.log('hello from reposrt.service.ts');
-        return this._httpClient.post<Report>('https://localhost:44361/api/Reports?vehId='+vehId, report, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+        return this._httpClient.post<Report>(this.defaultUrl + 'api/Reports?vehId='+vehId, report, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+    }
+    editReport(report: Report): Observable<Report> {
+        console.log('hello from edit in report.service.ts');
+        return this._httpClient.put<Report>(this.defaultUrl +'api/Reports', report, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
     }
 
 

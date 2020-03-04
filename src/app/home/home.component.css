@@ -1,7 +1,7 @@
 .container{
     background-color: white;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    height: 969px;
+    height: 1269px;
 }
 #backgroundDiv{
     width:100%;
@@ -23,3 +23,44 @@
 agm-map {
     height: 300px;
 }
+#sidenav a{
+    text-decoration:none;
+    font-size:20px;
+    color:white;
+    position:fixed;
+    border-radius:0 5px 5px 0px;
+    right:-75px;
+    transition:0.3s;
+    border:2px solid #c2e9fb;
+    
+    width:105px;
+    margin-left:10px;
+  }
+  i{
+  padding-right:10px;
+   padding-left:10px
+    
+  }
+  #sidenav a:hover{
+   right:0px; 
+   text-align:center;
+  }
+  #sidenav a:hover i{
+  display: inline-block;
+  }
+  #about{
+    top:80px;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  #blog{
+    top:110px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  }
+  #projects{
+    top:140px;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  }
+  #contact{
+    top:170px;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  }

@@ -23,11 +23,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userr = this.singleton;
-    this._dataService.currentVehicle.subscribe(d=>{this.vehicle=d, this.setPosition(), console.log('working..')});
+    this._dataService.currentVehicle.subscribe(d=>{this.vehicle=d, this.setPosition(),  console.log('working..')});
     
 
   }
   setPosition(){
+    if(this.vehicle==null){this.position=false;}
     if(this.vehicle!=null){ this.position=true;}
   }
   get singleton() {
