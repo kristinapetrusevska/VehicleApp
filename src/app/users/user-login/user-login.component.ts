@@ -15,7 +15,7 @@ export class UserLoginComponent implements OnInit {
 
   username:string;
   password: string;
-  user: UserToken={
+  userWithToken: UserToken={
     token:null,
     user :null
   };
@@ -28,16 +28,15 @@ export class UserLoginComponent implements OnInit {
 }
   login(){
     
-    this._userService.getUser(this.username, this.password).subscribe(d=>this.user=d, error=>null,()=> {
-      this.singleton=this.user;
-      if(this.user.token==undefined){
+    this._userService.getUser(this.username, this.password).subscribe(d=>this.userWithToken=d, error=>null,()=> {
+      this.singleton=this.userWithToken;
+      if(this.userWithToken.token==undefined){
         console.log('The user does not exist.'),
         this.fail="Failed to log in."
       }else{
-        console.log('Token generated: '+ this.user.token),
+        console.log('Token generated: '+ this.userWithToken.token),
         this._router.navigateByUrl('/home'),
         this.fail=null;
-
       }  
     }   );
     

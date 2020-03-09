@@ -35,13 +35,20 @@ export class SearchVehiclesComponent implements OnInit {
     
   }
   searchVehicle() {
-    this.show = true;
+    
     this._vehicleService.getVehicleBySearchString(this.searchText).subscribe((d) => { this.filteredVehicles = d },
       (error) => { },
       () => {
-        if(this.filteredVehicles.length != 1){
+        if(this.filteredVehicles.length == 0){
+          //this._dataService.changeVehicle(this.filteredVehicles[0]);
+          this.numOfRes = false;
+          this.show = false;
+          console.log('No search results.' );
+        }
+        if(this.filteredVehicles.length != 1 && this.filteredVehicles.length != 0){
           this._dataService.changeSearch(true);
           this.numOfRes = true;
+          this.show = true;
           console.log('More than one search result.');
         }
         if(this.filteredVehicles.length == 1){
@@ -50,6 +57,7 @@ export class SearchVehiclesComponent implements OnInit {
           this.show = false;
           console.log('Only one search result.' );
         }
+        
       });
 
   }

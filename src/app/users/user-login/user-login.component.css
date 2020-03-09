@@ -1,6 +1,4 @@
-#loginForm{
-
-    
+#loginForm{    
     text-align:left;
     padding:50px;
 }
@@ -14,11 +12,11 @@
     right: 0;
     width: 400px;
     height: 250px;
-    margin: auto;
-    
+    margin: auto;    
     background-color: white;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 #loginButton{
     font-family: "Roboto", sans-serif;
     outline: 0;
